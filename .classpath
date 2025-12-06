@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="Servlet/|OOPs/|javaFetures/|Junit_testing/src/|DSA/|JDBC_Oracle-23/src/" kind="src" path=""/>
+	<classpathentry kind="src" path="DSA"/>
+	<classpathentry kind="src" path="javaFetures"/>
+	<classpathentry kind="src" path="JDBC_Oracle-23/src"/>
+	<classpathentry kind="src" path="Junit_testing/src"/>
+	<classpathentry kind="src" path="OOPs"/>
+	<classpathentry kind="src" path="Servlet"/>
+	<classpathentry kind="output" path="JDBC_Oracle-23/out/production/JDBC_Oracle-23"/>
+</classpath>
