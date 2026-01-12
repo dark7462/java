@@ -15,19 +15,25 @@ import org.hibernate.service.ServiceRegistry;
  */
 public class App {
     public static void main( String[] args){
-        Configuration conn = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(AppObj.class);
+        Configuration conn = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Laptop.class).addAnnotatedClass(Student.class);
         ServiceRegistry reg = new StandardServiceRegistryBuilder().applySettings(conn.getProperties()).build();
         SessionFactory sf = conn.buildSessionFactory(reg);
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
         // work area
-        
-        AppObj obj = new AppObj(101,"Anurag");
-        session.persist(obj);
-        
+        Laptop laptop = new Laptop(5511,"dell");
+        Student student = new Student(101,"Anurag",97,laptop);
         
         
+       
+        //save area
+        session.persist(laptop);
+        session.persist(student);
+        
+        
+        // commit
         tx.commit();
-        System.out.println(obj);
+        // Extras
+        System.out.println(student);
     }
 }
