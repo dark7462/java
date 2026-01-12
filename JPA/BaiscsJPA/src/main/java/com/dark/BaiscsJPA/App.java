@@ -17,5 +17,15 @@ public class App {
     	Student stu = em.find(Student.class, 101);
     	System.out.println(stu);
     	
+    	Student s = new Student();
+    	s.setId(105);
+    	s.setName("Harsh");
+    	s.setMarks(6);
+    	em.getTransaction().begin();
+    	em.persist(s);
+    	
+    	em.getTransaction().commit();
+    	
+    	
     }
 }

@@ -9,6 +9,15 @@ public class Student {
 	private int id;
 	private String name;
 	private int marks;
+	public Student() {
+		super();
+	}
+	public Student(int id, String name, int d) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.marks = d;
+	}
 	public int getId() {
 		return id;
 	}
@@ -31,5 +40,7 @@ public class Student {
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", marks=" + marks + "]";
 	}
+	
+	
 	
 }
