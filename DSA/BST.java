@@ -1,4 +1,4 @@
-public class Tree {
+public class BST {
     public static void main(String[] args) {
         bTree b1 = new bTree();
         System.out.println("Inserting values: 50, 30, 20, 40, 70, 60, 80");
