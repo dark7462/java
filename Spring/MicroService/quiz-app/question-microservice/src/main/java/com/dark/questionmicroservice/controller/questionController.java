@@ -1,12 +1,13 @@
-package controller;
+package com.dark.questionmicroservice.controller;
 
-import model.question;
-import model.questionWapper;
-import model.response;
+import com.dark.questionmicroservice.model.question;
+import com.dark.questionmicroservice.model.questionWapper;
+import com.dark.questionmicroservice.model.response;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.questionService;
+import com.dark.questionmicroservice.service.questionService;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ import java.util.List;
 @RequestMapping("api/question")
 public class questionController {
 
+    @Autowired
     private questionService questionService;
 
     @GetMapping("/all")

@@ -1,8 +1,7 @@
-package model;
+package com.dark.questionmicroservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.aspectj.weaver.patterns.TypePatternQuestions;
 
 @Data
 @AllArgsConstructor

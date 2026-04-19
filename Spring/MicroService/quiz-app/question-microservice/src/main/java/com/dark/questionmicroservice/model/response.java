@@ -1,4 +1,4 @@
-package model;
+package com.dark.questionmicroservice.model;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

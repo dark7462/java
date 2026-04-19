@@ -1,15 +1,19 @@
-package service;
+package com.dark.questionmicroservice.service;
 
-import model.question;
-import model.questionWapper;
-import model.response;
-import repo.questionRepo;
+import com.dark.questionmicroservice.model.question;
+import com.dark.questionmicroservice.model.questionWapper;
+import com.dark.questionmicroservice.model.response;
+import com.dark.questionmicroservice.repo.questionRepo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class questionServiceImplimentation implements questionService {
 
+    @Autowired
     private questionRepo repo;
 
     @Override
@@ -40,8 +44,11 @@ public class questionServiceImplimentation implements questionService {
     @Override
     public List<questionWapper> fetchAllQuestions(List<Integer> ids){
         List<questionWapper> questionWappers = new ArrayList<>();
+
         for(Integer id : ids){
-            questionWappers.add(new questionWapper(findQuestionById(id)));
+            question question = repo.findById(id).orElse(null);
+            if(question == null) continue;
+            questionWappers.add(new questionWapper(question));
         }
         return questionWappers;
     }
@@ -50,7 +57,9 @@ public class questionServiceImplimentation implements questionService {
     public Integer getScore(List<response> responses) {
         Integer score = 0;
         for (response response : responses) {
-            if(response.getResponse().equals(repo.findById(response.getId()).get().getAnswer())){
+            question question = repo.findById(response.getId()).orElse(null);
+            if(question == null) continue;
+            if(response.getResponse().equals(question.getAnswer())){
                 score++;
             }
         }

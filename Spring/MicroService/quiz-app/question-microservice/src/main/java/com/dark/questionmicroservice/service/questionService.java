@@ -1,15 +1,11 @@
-package service;
+package com.dark.questionmicroservice.service;
 
-import model.question;
-import model.questionWapper;
-import model.response;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
+import com.dark.questionmicroservice.model.question;
+import com.dark.questionmicroservice.model.questionWapper;
+import com.dark.questionmicroservice.model.response;
 
 import java.util.List;
 
-@Component
-@Service
 public interface questionService {
     public List<question> findAll();
     public List<question> findAllQuestionsByCategory(String category);
