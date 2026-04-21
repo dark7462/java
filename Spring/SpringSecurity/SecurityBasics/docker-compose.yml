@@ -1,0 +1,22 @@
+services:
+  app:
+    build: .
+    ports:
+        - "8080:8080"
+    networks:
+      - temp
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: dark
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: db
+    ports:
+      - "5433:5432"
+    networks:
+      - temp
+
+networks:
+  temp:
+    driver: "bridge"
